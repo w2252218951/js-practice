@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // [判断数组
+    var arr = ''
+    // instanceof   用于测试构造函数的prototype属性 是否出现在对象的原型链中
+    console.log(arr instanceof Array)
+    //constructor 属性返回对创建此对象的数组函数的引用。
+    console.log(arr.constructor === Array);
+    // 在有些浏览器不支持isArray的情况下 推荐使用该方式
+    console.log(Object.prototype.toString.call(arr) === '[object Array]');
+    // es5语法   一般推荐使用
+    console.log(Array.isArray(arr));
+</script>
+</html>

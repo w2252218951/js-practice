@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var str = [2,4,6,4,22,6,26,21]
+    // // 普通思路  先定义一个空数组 做数据存储 然后再判断是否重复出现
+    // var str1 = []
+    // for(let i = 0 ;i < str.length ; i++){
+    //     // 通过indexOf 判断是否出现 没有出现就返回 -1
+    //     if(str1.indexOf(str[i]) === -1){
+    //         // 再将判断出来的值通过  数组的push方式存入到 新建数组中
+    //         str1.push(str[i])
+    //     }
+    // }
+    // console.log(str1);
+
+    // es6   Set方法  定义一个对象集合  里面的数值不重复
+    var s = new Set(str)
+    console.log(s);
+    // Array.from 可以将 类数组 和 可迭代的对象 转换成数组  有两个参数 第一个参数为 类数组 和  可迭代的对象(必填)
+    // 第二个参数则是改变转换成数组元素的函数(选填)
+    // 类数组对象具有length属性和 索引化index的元素  可迭代的对象可利用迭代的方式获得他自己本身的元素 比如 Set方法 和 Map
+    console.log(Array.from(s));
+</script>
+</html>

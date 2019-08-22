@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+单价: <span>$19.8元</span> 商品数量: <input type="text">总价 <input type="text">
+<button class="btn">计算</button>
+</body>
+<script>
+    var oSpan = document.getElementsByTagName("span")[0]
+    var oInput = document.getElementsByTagName('input')
+    var oBtn = document.getElementsByClassName('btn')[0]
+    oBtn.onclick = function () {
+        // toFixed(x)   四舍五入x为指定小数点的位置
+        let num1 = parseFloat(oInput[0].value).toFixed(2)
+        let price = parseFloat(oSpan.innerHTML.substring(1))
+        console.log(price);
+        console.log(num1);
+        let num2 = num1 * price
+        oInput[1].value = num2
+        // console.log(parseFloat(num1).toFixed(2));
+    }
+</script>
+</html>

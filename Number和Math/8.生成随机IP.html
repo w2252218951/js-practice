@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function  generate_ip() {
+        var arr = []
+        for(let i = 0; i < 4 ; i++){
+            arr.push(Math.round(Math.random() * 255))
+        }
+        arr.join('.')
+        return arr
+    }
+    alert(generate_ip())
+</script>
+</html>

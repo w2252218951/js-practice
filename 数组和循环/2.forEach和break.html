@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 箭头函数  当函数中的参数只有一个的时候,可以省略括号 当箭头函数中的值 只需要一个return  时  可以省略return语句 和 方括号
+    var arr = [22,222,2222,145]
+    // forEach 返回的时当前数组
+    arr.forEach((item,index,arr) =>
+        arr[index] = item.toString(16)
+    )
+    console.log(arr);
+</script>
+</html>

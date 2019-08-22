@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 设置时间
+    var date = new Date(2019,8,8,8,8)
+    // 创建一个十天之后的时间
+    date.setDate(date.getDate()+10)    // 通过setDate获取到当天的时间
+    var localDate = date.toLocaleString()
+    var start = new Date().getTime()
+    var end = date.getTime()
+    let diff = (end-start)/3600/1000/24
+    console.log(diff);
+    //  获得时间的流逝
+    console.log(Math.round(diff));
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    for(var i = 0 ; i < 30 ; i++) {
+        // console.log(Math.floor(Math.random() * 30));
+        console.log(getRandom(20, 30));
+    }
+    function getRandom(Min ,Max) {
+        if(Max < Min){
+            return "参数错误"
+        }
+        else{
+           return Math.round(Math.random() * (Max - Min) + Min)
+        }
+    }
+</script>
+
+</body>
+</html>

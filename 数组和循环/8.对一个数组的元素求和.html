@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 思路  将一个数组的中的值遍历出来 然后进行计算
+    var str  = [1,2,3,4,5,6,7,8,9]
+    //  初始化求和的变量
+    // var sum = 0
+    // for(let i = 0; i<str.length;i++){
+    //     sum += str[i]
+    // }
+    // console.log(sum); // 45
+
+    // 通过reduce 方法对数值求和  第一个参数为函数(必填) 第二个参数为初始值(选填)
+    // 函数中第一个参数要计算的值 ,第二个为取得的值 第三个为该元素的索引 第四个元素为数组本身
+    var sum = str.reduce((a,b) => {
+        /*
+
+        a先加b 然后将b的值赋值个下个a
+        *1 2
+        *3 3
+        *6 4
+        * */
+        // console.log(a, b);
+        return a + b
+    },0)
+    console.log(sum);
+</script>
+</html>

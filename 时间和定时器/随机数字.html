@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" class="ipt">
+<button class="start">开始</button>
+<button class="end">结束</button>
+</body>
+<script>
+    let oIpt = document.getElementsByClassName('ipt')[0]
+    let start = document.getElementsByClassName('start')[0]
+    let end = document.getElementsByClassName('end')[0]
+    let timer = null
+
+    start.onclick = function(){
+       timer = setInterval(function () {
+           console.log(oIpt.value);
+           oIpt.value = Math.round(Math.random() * 100)
+        },100)
+
+    }
+    end.onclick = function () {
+        clearInterval(timer)
+    }
+</script>
+</html>

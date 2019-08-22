@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button class="btn">获取验证码</button>
+    <input type="text" class="code">
+</body>
+<script>
+    let oBtn = document.getElementsByClassName('btn')[0]
+    let oIput = document.getElementsByTagName("input")[0]
+    oBtn.onclick  = function () {
+        oIput.value = code(4)
+    }
+
+    function code(length) {
+        // 生成一个字典
+        let dict = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        let code = ''
+        for(let i = 0 ;i < length ; i++){
+            console.log(i);
+            code += dict[Math.round(Math.random()*62)]
+        }
+        return code
+
+    }
+</script>
+</html>

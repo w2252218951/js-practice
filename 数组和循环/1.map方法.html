@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = [22,222,2222,145]
+    // map 是映射的意思 map中第一个参数为函数(必填) 第二个参数为返回函数中的this的参数(选填)   是支持return的返回值的 且 map返回是一个新数组
+    // 函数中  第一个参数为函数中每个参数的值,第二个为每个参数的索引值 第三个是当前的数组本身
+    // arr.map((item,index,arr) =>{
+    //     // console.log(item,index);
+    //     // console.log(arr);
+    //     console.log(arr[index]);
+    // })
+    var arr1 = arr.map( item => item.toString(16))
+    console.log(arr1);
+</script>
+</html>

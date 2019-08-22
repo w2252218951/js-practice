@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">开始显示</button>
+<h2 id="showTime"></h2>
+</body>
+<script>
+    var oBtn = document.getElementById('btn')
+    var show = document.getElementById('showTime')
+    oBtn.onclick = function () {
+        showTime()
+    }
+
+    function showTime() {
+        var date = new Date()
+        let year = date.getFullYear()
+        let Month = date.getMonth() + 1 > 9 ? date.getMonth() + 1 : 0 + (date.getMonth() + 1).toString();
+        let day = date.getDate()
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        let seconds = date.getSeconds()
+        show.innerHTML = year + '年' + Month + '月' + day + '日     ' + hours + '时' + minutes + '分' + seconds + "秒"
+        setTimeout(showTime, 1000)
+    }
+</script>
+</html>
