@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function stopListener(obj,eventType,fn) {
+        // 标准浏览器
+        if(obj.removeEventListener){
+            obj.removeEventListener(eventType,fn, false)
+        }else if(obj.detachEvent){
+            // ie 低版本 detachEvent
+            obj.detachEvent(eventType,fn)
+        }else{
+            obj['on'+eventType] = fn
+        }
+    }
+    document.addEventListener('click',function  fn() {
+         alert(11111111111111)
+        // 清除事件监听
+        stopListener(document,'click' ,fn )
+    },false)
+</script>
+</html>

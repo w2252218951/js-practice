@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 递归函数
+    /* fn(1) 此时n=1  先打印出 1 然后优先进行循环判断
+    * fn(2)  fn(3)
+    *当 调用fn(3)时 n = 3 了 不继续进行递归了
+    * 此时进行之前没有进行的 打印输出  先执行fn(3) 然后执行fn(2) 最后执行 fn(1)
+    * */
+
+    function fn(n) {
+        document.write(n)
+        if(n<3){
+            fn(n+1)
+        }
+        document.write(n)
+    }
+    fn(1)   // 输出  123321
+
+
+    // 求 5 的阶乘  就是 5 * 4 * 3 * 2 * 1
+    /*
+     求n的阶乘  就是 fn(n) * fn(n-1) * fn(n-2)
+     */
+    // function fn(n) {
+    //     // 设置出口
+    //     if(n === 1 ){
+    //         return 1
+    //     }
+    //     return n * fn(n-1)
+    // }
+    // alert(fn(5))
+</script>
+</html>

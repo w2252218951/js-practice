@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function add(x) {
+        console.log(x);
+        return function (y) {
+            console.log(y);
+            return function (z) {
+                // 根据作用域链 可以将上一级的参数获取到
+                return x + y + z
+            }
+        }
+    }
+    // let fn1 = add(3);
+    // let fn2 = fn1(4);
+    // console.log(fn2(5));
+    // 可直接写成
+    console.log(add(3)(4)(5));
+</script>
+</body>
+</html>

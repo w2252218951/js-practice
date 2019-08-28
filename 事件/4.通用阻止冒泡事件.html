@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+</body>
+<script>
+    function cancelPropagation(ev) {
+        if(ev.stopPropagation){
+            ev.stopPropagation()
+        }else if(ev.cancelBubble){
+            // 在 ie 低版本下 通过 cancelBubble 阻止默认事件
+            ev.cancelBubble = true
+        }
+    }
+    var oBtn = document.querySelector('#btn')
+    console.log(oBtn);
+    oBtn.onclick = function (ev) {
+        var ev = ev || event
+
+        alert('sans')
+        cancelPropagation(ev)
+
+    }
+    document.onclick = function () {
+        alert('Hello World!')
+    }
+</script>
+</html>

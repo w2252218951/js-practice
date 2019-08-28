@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 1.封装一个函数 要求输入字符串转换成数组弹出
+        /**
+         *1.定义函数的名字 根据这个函数的功能 见词达意
+         *2.函数的参数 (局部变量)
+         *3.看是否需要返回值  如果需要 return  如果不需要 默认可不写 函数的返回值默认为 undefined
+         *4.是否需要返回值判断标准  函数的运行结果有没有 被第三方调用
+         * @param s
+         */
+        // function strArr(s) {
+        //     let arr = s.split('')
+        //     // alert(arr);   输出 s,a,n,s
+        //     return arr
+        // }
+        // alert(strArr("sans"))  // s,a,n,s
+
+        //2. 封装一个函数  求出最小值  不能使用js内置函数
+        // Math.min(1,2,3,4)
+        function  min(a,b,c) {
+            // console.log(a, b, c);
+            // 直接方法
+            // if(a > b){
+            //     if(b > c){
+            //         return c
+            //     }
+            //     else {
+            //         return b
+            //     }
+            // }else{
+            //     if(b > c){
+            //         return c
+            //     }else {
+            //         return a
+            //     }
+            // }
+
+            // arguments是函数内的固有变量 以类数组的形式报存调用方给改函数传入的所有参数
+            //常用length 和 callee  length表示调用方传入的多少个参数 callee表示当前函数本身
+            // console.log(arguments);
+            // 通过 call 将数组的方法借用给 类数组  arguments
+            return [].sort.call(arguments)[0]
+        }
+        alert(min(7,55,4,2,88,3,1))
+    </script>
+</body>
+</html>

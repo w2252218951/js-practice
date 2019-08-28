@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 事件绑定的三种类型
+    //  事件监听 addEvenListener(调用对象 ,函数 , 是否开启捕获)
+    //  对象.eventType(事件类型) = 函数    !!!!!!!!!当对象后面是变量的时候 obj[]  用方括号包裹
+    function listenEvernt(obj, eventType, fn) {
+        // 标准浏览器下   obj.addEventListener(eventType, fn , false)
+        if (obj.addEventListener) {
+            obj.addEventListener(eventType, fn, false)
+        } else if (obj.attachEvent) {
+            // ie 低版本判断 不需要捕获判断   事件类型需要加上  'on'
+            obj.attachEvent("on"+eventType,fn)
+        }else {
+             //  直接调用
+            obj['on'+ eventType] = fn
+        }
+    }
+    listenEvernt(document, 'click', function () {
+        alert("12312555")
+    })
+</script>
+</html>

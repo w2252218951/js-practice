@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // function argsum() {
+        //     类数组
+        //     return [].reduce.call(arguments,(total,value) =>{
+        //         return  total + value
+        //     },0)
+        //
+        //
+        // }
+
+        // 在es6中  是不存在 arguments方法的 因此使用es6  箭头函数的时候 使用 拓展运算符进行赋值
+        let argsum = (...arr)=> {
+            console.log(arr);
+            return arr.reduce((total,value)=>{
+                return total + value
+            })
+        }
+        alert(argsum(1,2,3,4))
+        // argsum(1,2,3,4,5)
+    </script>
+</body>
+</html>

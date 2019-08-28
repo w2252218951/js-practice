@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数声明
+    // function  foo() {
+    //  // 后面的函数可以覆盖前面的函数
+    //     function bar() {
+    //         console.log(11111);
+    //         return 3
+    //     }
+    //     return bar()
+    //     function bar() {
+    //         console.log(22222);
+    //         return 8
+    //     }
+    // }
+    // alert(foo())   // 8
+
+    // 函数表达式
+    // function  foo() {
+    //     // 在使用函数表达式时会存在变量提升 将所有变量提升到最顶部 此时有个 var  bar = undefined
+    //     var bar = function () {
+    //         return 3
+    //     }
+    //     return bar()
+    //     var bar = function () {
+    //         return 8
+    //     }
+    // }3
+    // alert(foo())
+
+
+
+    function  foo() {
+        return bar()
+        // 在使用函数表达式时会存在变量提升 将所有变量提升到最顶部 此时有个 var  bar = undefined
+        var bar = function () {
+            return 3
+        }
+        var bar = function () {
+            return 8
+        }
+    }
+    alert(foo())
+</script>
+</body>
+</html>

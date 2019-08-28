@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+<body>
+<a href="http://www.baidu.com">百度</a>
+</body>
+<script>
+    // 在函数中传入事件对象
+    function preventEvent(ev) {
+        if(ev.preventDefault){
+            ev.preventDefault()
+        }else if(ev.returnValue){
+            // ie 低版本兼容
+            ev.returnValue()
+        }
+    }
+    var  oA = document.getElementsByTagName('a')[0]
+    console.log(oA);
+    oA.onclick = function(ev){
+        alert(1)
+        preventEvent(ev)
+    }
+</script>
+</html>
