@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    console.log(window.location);
+    // var mainpath
+    var mainpath = window.location.protocol + '//'+ window.location.host
+    console.log(mainpath);
+    // var item = window.location.pathname.split('/').map(item =>  item + '').join('/')
+    var str = '<a href="'+mainpath+'">首页-></a>'
+    // 将路径进行切割
+    var item = window.location.pathname.substring(1).split('/')
+    for(let i = 0; i < item.length ; i++){
+        mainpath += item[i]
+        if(i < item.length -1){
+            //  给路径添加 /
+            mainpath += '/'
+        }
+        str += '<a href="'+mainpath+'">'+item[i]+'</a> ->'
+    }
+    document.write(str.slice(0,str.lastIndexOf('->')))
+
+
+</script>
+</html>

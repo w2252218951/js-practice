@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let p1 = {
+        name: 'sans',
+        age: 20,
+        showAge:function () {
+            alert(this.age)
+        },
+        goHome: function (name,age) {
+            alert(this.name+ '带了一个'+age+ '的'+name+'过来了')
+        }
+    }
+
+    let p2 = {
+        name: 'TiMo',
+        age: 18,
+        showName:function () {
+            alert(this.name)
+        }
+    }
+    // 将本身的方法借给其他人   实际上就是 改变指针的指向
+    // p1.showAge.call(p2)
+    // p2.showName.call(p1)
+    // call 和 apply 作用是相同的  区别是在 传递参数时 apply中的参数 是放在数组中的
+    // p1.goHome.call(p2,'ss',12)
+    p1.goHome.apply(p2,['s2w',222])
+</script>
+</html>

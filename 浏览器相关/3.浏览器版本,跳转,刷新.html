@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 获取浏览器版本信息
+    console.log(window.navigator.appVersion);
+    setTimeout(function () {
+        // location 浏览器对象包含有关当前 URL 的信息。
+        console.log(window.location.href='http://www.baidu.com');
+    },1000)
+    var date = new Date()
+    document.write(date.toLocaleString())
+    setInterval(function () {
+        window.location.reload()
+    },1000)
+</script>
+</html>

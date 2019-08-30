@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <li>Sans <button class="btn">X</button></li>
+</body>
+<script>
+    var oBtn = document.querySelector('.btn')
+    oBtn.onclick = function () {
+        var del = confirm('是否要删除?')
+        if(del){
+            //  在父级节点上 将li进行移除
+             this.parentNode.remove()
+        }
+    }
+</script>
+</html>

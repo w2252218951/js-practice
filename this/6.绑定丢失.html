@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // function foo() {
+    //     console.log(this.a);
+    // }
+    // let obj = {
+    //     a: 1666,
+    //     foo:foo
+    // }
+    // var a = "我在全局"
+    // /*
+    //   此时的bar 相当于  bar = function foo(){
+    //     console.log(this.a)
+    //   }
+    //   在没有开启 严格模式的情况下  this --> window
+    //  */
+    // var bar = obj.foo
+    // bar()    我在全局
+
+
+    function foo() {
+        console.log(this.a);
+    }
+    function doFoo(fn){
+        /*
+        此时传入的函数  相当于  直接调用的是挂载在 window下的 foo
+         */
+        fn()
+    }
+    let obj = {
+        a: 1666,
+        foo:foo
+    }
+
+    var a = "我在全局"
+    doFoo(obj.foo) //  我在全局
+</script>
+</html>

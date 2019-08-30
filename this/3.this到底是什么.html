@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1. this的绑定和函数是没有关系的 只取决于函数的调用方法
+    //2.  当一个函数被调用时 会创建一个活动记录(也被称为执行上下文) 这个记录包含函数在哪儿调用
+    // 简单来说就是  谁调用了这个函数  这个this就指向谁
+    function foo(num) {
+        console.log('foo' + num);
+        this.count++
+    }
+    foo.count = 0
+    for(let i = 0 ; i< 10 ; i++){
+        if(i > 5){
+            foo(i)
+            // 此时的foo 其实是挂载在 window下的
+            window.foo.call(foo,i)
+        }
+    }
+    console.log('foo.count被调用了多少次?:' + foo.count);
+</script>
+</html>

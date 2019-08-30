@@ -14,11 +14,25 @@
 </body>
 <script>
     var aBtn = document.getElementsByTagName('button')
-    for(var i = 0 ; i<aBtn.length ; i++){
+    // for(var i = 0 ; i<aBtn.length ; i++){
+    //     // 将下标进行存储
+    //     // aBtn[i].index = i
+    //     aBtn[i].onclick = function () {
+    //         alert(this.index)
+    //     }
+    // }
 
-        aBtn[i].onclick = function () {
-            alert(i)
-        }
+    for(var i = 0 ; i<aBtn.length ; i++) {
+        aBtn[i].onclick = (function (i) {
+            return function () {
+                alert(i)
+            }
+        })(i)
     }
+    // 通过let 的块级作用域
+    // for(let i = 0 ; i< aBtn.length; i++){
+    //     aBtn[i].onclick = function () {
+    //         alert(i)
+    // }}
 </script>
 </html>

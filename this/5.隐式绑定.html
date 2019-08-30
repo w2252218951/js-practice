@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function foo() {
+        console.log(this.a);
+    }
+    let obj2 = {
+        a: 23,
+        foo: foo
+    }
+    let obj1 = {
+        a: 25,
+        obj2: obj2
+    }
+    // obj1.obj2.foo()
+    //相当于     此时obj3 指向的是 obj2
+    let obj3 = obj1.obj2
+    obj3.foo()
+
+    // 总结 : 2 对象.foo()  在函数内部指向的是这个对象 (隐式绑定)
+</script>
+</html>

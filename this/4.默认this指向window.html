@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function foo() {
+        // 'use strict'
+        // 在没有开启严格模式的情况下 this 指向的是 window
+        // 如果在函数内部使用了 严格模式(只有在函数内部使用才可以)  this指向的就是 undefined
+        console.log(this);
+        console.log(this.a);
+    }
+    var a = 3;
+    // foo()
+    (function () {
+        'use strict'
+        foo()
+    })()
+</script>
+</html>

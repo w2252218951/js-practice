@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button class="open">打开</button>
+<button class="close">关闭</button>
+</body>
+<script>
+    var Open = document.querySelector('.open')
+    var oClose = document.querySelector('.close')
+    var newWindow
+    Open.onclick = function () {
+        // window.open(URL,name,specs,replace)
+        // URl 指定页面的URL
+        // name  可选  打开页面的属性或窗口名称
+        //specs 可选 设置打开页面的参数
+        newWindow = window.open('http://www.baidu.com','new','width=300px,height=300px,top;100px,left=100px,status,toolbar,menubar,location')
+
+    }
+    // 关闭你新开窗口
+    oClose.onclick = function () {
+        newWindow.close()
+    }
+</script>
+</html>

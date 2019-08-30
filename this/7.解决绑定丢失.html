@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function foo() {
+        console.log(this.a);
+    }
+    var obj = {
+        a: 2,
+        foo: foo
+    }
+    var bar = function () {
+        obj.foo()
+    }
+    function dooFo(fn) {
+        fn()
+    }
+    var a = "我是全局的"
+    // 通过 call 和  apply 进行的显示绑定
+    // foo.call(obj)  //2
+    // 和显示绑定对应的形式(隐式绑定):   对象.方法()  方法内部的this 会自动绑定到 对象上
+    // obj.foo()
+
+    //  obj.foo  没有加()去调用 foo内部的this 所以this 不会指向 obj  这种情况绑定丢失
+    // 使用一种call的变种形式  直接给外层套一个函数
+    // bar()
+    dooFo(function () {
+        // 此时  相当于  obj调用的 这个 方法
+        obj.foo()
+    })
+
+</script>
+
+</html>

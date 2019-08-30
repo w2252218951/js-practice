@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="5.forward.html">forward</a>
+<button class="btn">前进</button>
+<img src="插图.png" alt="" style="width: 300px; ">
+</body>
+<script>
+    var oBtn = document.querySelector('.btn')
+    oBtn.onclick = function () {
+        window.history.forward()
+    }
+    window.onresize = function () {
+        var cw = document.documentElement.clientWidth /1200
+        document.getElementsByTagName('img')[0].style.width = 300 * cw + 'px'
+    }
+</script>
+</html>
