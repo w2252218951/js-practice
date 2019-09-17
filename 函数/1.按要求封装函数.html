@@ -44,6 +44,7 @@
             // arguments是函数内的固有变量 以类数组的形式报存调用方给改函数传入的所有参数
             //常用length 和 callee  length表示调用方传入的多少个参数 callee表示当前函数本身
             // console.log(arguments);
+            console.log(arguments);
             // 通过 call 将数组的方法借用给 类数组  arguments
             return [].sort.call(arguments)[0]
         }

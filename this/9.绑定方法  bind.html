@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+</body>
+<script>
+    function foo(something) {
+        console.log(this.a, something);
+        return this.a + something
+    }
+    var obj = {
+        a : 2
+    }
+    // function  bind(fn,obj) {
+    //     return  function () {
+    //      return   fn.apply(obj, arguments)
+    //     }
+    // }
+    // 使用bind 的时候相当于 在外层又套了一个内置的函数
+
+    // 此时的bar ==>  bar  = fn.apply(obj,arguments)
+    // var bar = bind(foo,obj)
+    // bind(想让函数内部的this指向谁，就将谁传进去 )
+    var bar = foo.bind(obj)
+    var b = bar(3)    //   ==>  var bar = foo.bind(obj,3)  var b = bar()
+    console.log(b);
+</script>
+</html>

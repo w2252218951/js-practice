@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    function  User(name) {
+        // 局部变量  私有的变量
+        var name1 = name;
+        this.name2 = name;
+        //局部的属性  私有的方法
+        function getName1() {
+            return name1
+        }
+    }
+
+    // 公共的方法
+    User.prototype.getName2 = function () {
+        return this.name2;
+    }
+    // 静态的方法和属性   不需要实例化就能通过函数 属性/方法的形式是使用
+    User.name3 = 'xiaohong';
+    User.name2 = 'xxxxxxx'
+    User.getName3 = function () {
+        console.log(this);   // 这个this指向的是  User
+        // 调用User的静态属性
+        return this.name2
+    }
+    var p1 = new User('xiaoqiang')
+
+    // 此时是一个实例化的方法在进行调用
+    // console.log(p1.name1);  // undefined
+    // console.log(p1.getName1());  // 报错
+
+    // 此时调用的是一个静态方法 静态方法只能通过函数 调用
+    // console.log(p1.name3);  // undefined
+    // console.log(p1.getName3());  // 报错
+
+    // console.log(p1.getName2());    // xiaoqiang
+
+    // 此时调用getName3的时候 this指向的是 函数User
+    // console.log(User.getName3());
+
+    // 总结
+    /*
+    1.私有方法/属性 只能在内部被调用
+    2.公共方法/属性 实例化对象去调用
+    3.静态方法/属性 直接去调用，不需要实例化
+     */
+</script>
+</html>

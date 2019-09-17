@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function foo() {
+        // 下面返回箭头函数中的this 指向的是指向foo内部的this  而现在foo内部this指向的是 obj1
+        return ()=>{
+            console.log(this.a);
+        }
+        console.log(this.a);
+
+        // 传统函数中  此时foo中指向到了 obj1  但是 返回的函数并没有被调用 直接指向到window上
+        // return function () {
+        //     // 'use strict'
+        //     console.log(this);
+        // }
+    }
+    var obj1 = {
+        a: 2
+    }
+    var obj2 = {
+        a: 3
+    }
+    //箭头函数是没有 this 的   他指向的是函数上一层运行时的
+    var bar = foo.call(obj1)
+    bar()
+    // bar.call(obj2)
+</script>
+</html>

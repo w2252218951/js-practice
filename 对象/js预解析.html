@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function  Foo() {
+        //  函数表达式
+        console.log(this);   // 此时 this 指向的是 window
+        // 函数表达式 因为·没有使用 var 去定义  所以此时 是个全局变量
+        // 同时因为1函数执行上下文 调用后内部的将 之前地1进行了 覆盖  所以弹出 1
+        getName =  function () {
+            alert(1);
+        }
+        return this;
+    }
+    // 静态方法
+    Foo.getName = function () {
+        alert(2)
+    }
+    // 公共方法
+    Foo.prototype.getName = function () {
+        alert(3)
+    }
+    //  函数表达式
+    console.log(getName);   // 打印出 alert（5） 的函数表达式
+    var  getName = function () {
+        alert(4)
+    }
+
+    console.log(getName); // 打印出  alert(5) 的函数声明
+
+    //  函数声明
+    function  getName() {
+        alert(5)
+    }
+    // console.log(Foo.getName());  // 此时会弹出2  但是因为该函数中没有return 返回值  所以此时打印出的是 undefined
+
+    /*
+    * 此时存在着js的预解析
+    * 首先将 函数声明 和  函数表达式 进行提升  通过var 进行变量提升 此时getName ==> undefined
+    * 函数提升的优先级 比 变量提升要高  进行了 覆盖
+    *此时执行上下文继续向下检索  找到 将函数声明中的 function 进行了 覆盖  所以 弹出了 4
+    * */
+
+    // Foo().getName()   // ==> window.getName()
+
+    new Foo.getName()
+</script>
+</html>

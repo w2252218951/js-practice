@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    // 硬绑定  实际上就是在外层套一层函数
+    function foo(something) {
+        console.log(this.a, something); // 2 , 3
+        return this.a + something
+    }
+    var obj = {
+        a: 2
+    };
+    var bar = function () {
+        // 此时的arguments  是一个类数组   直接接受传入的参数
+        // 通过apply 改变this的指向
+        return foo.apply(obj,arguments)
+    }
+    var b  = bar(3)
+    console.log(b);  //  50
+</script>
+</html>
